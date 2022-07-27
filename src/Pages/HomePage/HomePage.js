@@ -28,20 +28,6 @@ function HomePage() {
 
                     </div>
 
-                    <div class="card-home">
-                        <h2>House Take Away</h2>
-                        <div class="cta-container"><a href="#" class="details-link">Details</a></div>
-                        <div class="card_image"><img src="./static/images/house2.jpg" /></div>
-
-                    </div>
-
-                    <div class="card-home">
-                        <h2>Sunhouse C21</h2>
-                        <div class="cta-container"><a href="#" class="details-link">Details</a></div>
-                        <div class="card_image"><img src="./static/images/apartments.jpg" /></div>
-
-                    </div>
-
                     <div class={style.noDataContainer}>
                         <p class={style.noData}>There are no housing offers found...</p>
                     </div>
