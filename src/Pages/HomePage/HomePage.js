@@ -21,8 +21,10 @@ function HomePage() {
 
                     <div class={style.cardHome}>
                         <h2>Real House Luxury Villa</h2>
-                        <div class={style.ctaContainer}><a href="#" class={style.detailsLink}>Details</a></div>
                         <div class={style.cardImage}><img src={house5} /></div>
+                        <div class={style.ctaContainer}>
+                            <a href="#" class={style.detailsLink}>Details</a>
+                        </div>
 
                     </div>
 
