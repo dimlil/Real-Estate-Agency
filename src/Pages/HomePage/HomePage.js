@@ -3,10 +3,10 @@ import style from './Home.module.css'
 function HomePage() {
     return (
         <main>
-            <section id="home-page" class={style.backgroundImage}>
-                <div class={style.homeContainer}>
+            <section id="home-page" className={style.backgroundImage}>
+                <div className={style.homeContainer}>
 
-                    <div class={style.info}>
+                    <div className={style.info}>
                         <h1>Discover Your Perfect Home</h1>
                         <h2>The Best Real Estate Deals</h2>
                     </div>
@@ -16,20 +16,20 @@ function HomePage() {
 
             <section id={style.topHouses}>
                 <h1>Top Houses</h1>
-                <div class={style.houses}>
+                <div className={style.houses}>
 
 
-                    <div class={style.cardHome}>
+                    <div className={style.cardHome}>
                         <h2>Real House Luxury Villa</h2>
-                        <div class={style.cardImage}><img src={house5} /></div>
-                        <div class={style.ctaContainer}>
-                            <a href="#" class={style.detailsLink}>Details</a>
+                        <div className={style.cardImage}><img src={house5} /></div>
+                        <div className={style.ctaContainer}>
+                            <a href="#" className={style.detailsLink}>Details</a>
                         </div>
 
                     </div>
 
-                    <div class={style.noDataContainer}>
-                        <p class={style.noData}>There are no housing offers found...</p>
+                    <div className={style.noDataContainer}>
+                        <p className={style.noData}>There are no housing offers found...</p>
                     </div>
                 </div>
             </section>
