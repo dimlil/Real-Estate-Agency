@@ -5,6 +5,7 @@ import HomePage from './Pages/HomePage/HomePage'
 import HouseForRent from './Pages/HouseForRent/HouseForRent'
 import LoginPage from './Pages/LoginPage/Login'
 import RegisterPage from './Pages/RegisterPage/RegisterPage'
+import SearchPage from './Pages/SearchPage/SearchPage'
 function Navigation() {
     return (
         <BrowserRouter>
@@ -16,6 +17,7 @@ function Navigation() {
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/create" element={<CreatePage />} />
+                <Route path="/search" element={<SearchPage />} />
             </Routes>
         </BrowserRouter>
     )

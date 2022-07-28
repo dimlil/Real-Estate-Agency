@@ -14,7 +14,7 @@ function Header() {
                 <Link to={'/register'}>Register</Link>
 
                 <Link to={'/create'}>Create offer</Link>
-                <li><a href="#">Search</a></li>
+                <Link to={'/search'}>Search</Link>
                 <li><a href="#">Logout</a></li>
             </ul>
         </nav>
