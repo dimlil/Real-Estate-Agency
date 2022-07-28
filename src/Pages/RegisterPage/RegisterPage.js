@@ -1,45 +1,47 @@
-
-function RegisterPage(){
-    return(
+import { Link } from 'react-router-dom'
+import styles from './register.module.css'
+function RegisterPage() {
+    return (
         <main>
 
-        <section id="register-page">
-            <div class="boxs">
-                <div class="card-image">
-                    <h2 class="card-heading">
-                        Create your account
-                    </h2>
-                </div>
-                <form class="card-form" action="" method="">
-                    <div class="input">
-                        <input type="text" class="input-field" placeholder="Alexander Parkinson" id="name" name="" value="" />
-                        <label class="name">Full Name</label>
+            <section id="register-page">
+                <div className={styles.boxs}>
+                    <div className={styles.cardImage}>
+                        <h2 className={styles.cardHeading}>
+                            Create your account
+                        </h2>
                     </div>
-                    <div class="input">
-                        <input type="text" class="input-field" placeholder="alexander" id="username" name="" value="" />
-                        <label class="username">Username</label>
-                    </div>
-                    <div class="input">
-                        <input type="password" class="input-field" id="password" name="" placeholder="******" />
-                        <label class="password">Password</label>
-                    </div>
-                    <div class="input">
-                        <input type="password" class="input-field" id="re-password" name="" placeholder="******" />
-                        <label class="re-password">Repeat Password</label>
-                    </div>
-                    <div class="action">
-                        <button class="action-button">Get started</button>
-                    </div>
-                </form>
+                    <form className={styles.cardForm} action="" method="">
+                        <div className={styles.input}>
+                            <input type="text" className={styles.inputField} placeholder="Alexander Parkinson" id="name" name="name" value="" />
+                            <label className={styles.name} htmlFor="name">Full Name</label>
+                        </div>
+                        <div className={styles.input}>
+                            <input type="text" className={styles.inputField} placeholder="alexander" id="username" name="" value="" />
+                            <label className={styles.username} htmlFor="username">Username</label>
+                        </div>
+                        <div className={styles.input}>
+                            <input type="password" className={styles.inputField} id="password" name="" placeholder="******" />
+                            <label className={styles.password} htmlFor="password">Password</label>
+                        </div>
+                        <div className={styles.input}>
+                            <input type="password" className={styles.inputField} id="re-password" name="" placeholder="******" />
+                            <label className={styles.rePassword} htmlFor="re-password">Repeat Password</label>
+                        </div>
+                        <div className={styles.action}>
+                            <button className={styles.actionButton}>Get started</button>
+                        </div>
+                    </form>
 
-                <div class="card-info">
-                    <small>Already have an account?<a href="#"> Sign in</a>
-                    </small>
+                    <div className={styles.cardInfo}>
+                        <small>Already have an account?
+                            <Link to='/login'>Sign in</Link>
+                        </small>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-    </main>
+        </main>
     )
 }
 export default RegisterPage
