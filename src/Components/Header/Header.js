@@ -13,7 +13,7 @@ function Header() {
                 <Link to={'/login'}>Login</Link>
                 <Link to={'/register'}>Register</Link>
 
-                <li><a href="#">Create offer</a></li>
+                <Link to={'/create'}>Create offer</Link>
                 <li><a href="#">Search</a></li>
                 <li><a href="#">Logout</a></li>
             </ul>
