@@ -10,7 +10,7 @@ function Header() {
                 <Link to={'/housing-for-rent'}>Housing for rent</Link>
 
 
-                <li><a href="#">Login</a></li>
+                <Link to={'/login'}>Login</Link>
                 <Link to={'/register'}>Register</Link>
 
                 <li><a href="#">Create offer</a></li>
