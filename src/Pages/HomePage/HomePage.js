@@ -1,4 +1,5 @@
 import house5 from '../../Assets/5.jpg'
+import House from '../../Components/House/House'
 import style from './Home.module.css'
 function HomePage() {
     return (
@@ -18,15 +19,7 @@ function HomePage() {
                 <h1>Top Houses</h1>
                 <div className={style.houses}>
 
-
-                    <div className={style.cardHome}>
-                        <h2>Real House Luxury Villa</h2>
-                        <div className={style.cardImage}><img src={house5} /></div>
-                        <div className={style.ctaContainer}>
-                            <a href="#" className={style.detailsLink}>Details</a>
-                        </div>
-
-                    </div>
+                    <House />
 
                     <div className={style.noDataContainer}>
                         <p className={style.noData}>There are no housing offers found...</p>
