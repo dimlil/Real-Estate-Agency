@@ -19,7 +19,7 @@ function HomePage() {
                 <h1>Top Houses</h1>
                 <div className={style.houses}>
 
-                    <House />
+                    <House title="Real House Luxury Villa" imgUrl="https://cf.bstatic.com/xdata/images/hotel/max1280x900/314234927.jpg?k=21291418450e2c1802e02864677b7cf811321797b1d36aaa55e1019133f82698&o=&hp=1"/>
 
                     <div className={style.noDataContainer}>
                         <p className={style.noData}>There are no housing offers found...</p>
