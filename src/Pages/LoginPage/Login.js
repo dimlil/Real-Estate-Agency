@@ -17,7 +17,7 @@ function LoginPage() {
     const formHanldler = async (e) => {
         e.preventDefault();
         const result = await login(username, password);
-        if (result.status==200) {
+        if (result.status===200) {
             navigate('/')
         }
     }
