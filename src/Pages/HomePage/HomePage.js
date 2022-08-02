@@ -1,7 +1,17 @@
+import { useEffect, useState } from 'react';
 import house5 from '../../Assets/5.jpg'
 import TopHouse from '../../Components/TopHouse/TopHouse.js'
+import { getTopHouses } from '../../Services/GetTopHouses'
 import style from './Home.module.css'
 function HomePage() {
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        getTopHouses().then(data => { setPosts(data) });
+    }, []);
+
+    console.log(posts);
+
     return (
         <main>
             <section id="home-page" className={style.backgroundImage}>
@@ -19,11 +29,18 @@ function HomePage() {
                 <h1>Top Houses</h1>
                 <div className={style.houses}>
 
-                    <TopHouse title="Real House Luxury Villa" imgUrl="https://cf.bstatic.com/xdata/images/hotel/max1280x900/314234927.jpg?k=21291418450e2c1802e02864677b7cf811321797b1d36aaa55e1019133f82698&o=&hp=1"/>
-
-                    <div className={style.noDataContainer}>
-                        <p className={style.noData}>There are no housing offers found...</p>
-                    </div>
+                    {posts.length > 0 ? (
+                        <>
+                            {
+                                posts.map((post, key) => {
+                                    return <TopHouse key={key} id={post._id} title={post.name} imgUrl={post.imgUrl} />
+                                })}
+                        </>
+                    ) : (
+                        <div className={style.noDataContainer}>
+                            <p className={style.noData}>There are no housing offers found...</p>
+                        </div>)
+                    }
                 </div>
             </section>
         </main>
