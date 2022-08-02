@@ -1,5 +1,5 @@
-import styles from './House.module.css'
-function House(props) {
+import styles from './TopHouse.module.css'
+function TopHouse(props) {
     return (
         <div className={styles.cardHome}>
             <h2>{props.title}</h2>
@@ -10,4 +10,4 @@ function House(props) {
         </div>
     )
 }
-export default House
+export default TopHouse
