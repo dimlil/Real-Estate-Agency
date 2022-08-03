@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './AllHouses.module.css'
 function AllHouse(props) {
     return (
@@ -6,7 +7,9 @@ function AllHouse(props) {
             <p>{props.description}</p>
 
             <div className={styles.ctaContainer}>
-                <a href="#" className={styles.detLink}>Details</a>
+                <Link to={`/house/${props.id}`} className={styles.detLink} >
+                    Details
+                </Link>
             </div>
             <div className={styles.cardCircle}><img src={props.imgUrl} /></div>
         </div>
