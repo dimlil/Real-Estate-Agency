@@ -140,6 +140,7 @@ span {
 }
 
 .remove {
+    cursor: pointer;
     background-color: rgb(199, 136, 109);
 }
 
