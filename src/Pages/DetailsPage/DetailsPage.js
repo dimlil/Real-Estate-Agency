@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { deletePost } from '../../Services/DeletePost';
 import { getPost } from '../../Services/GetPost';
 import styles from './Details.module.css'
@@ -18,7 +18,7 @@ function DetailsPage() {
             setIsOwner(data.isOwner);
         });
     }, []);
-    
+
     const deletePostHandler = async () => {
         const result = await deletePost(id);
         if (result) {
@@ -55,7 +55,7 @@ function DetailsPage() {
                             <div class={styles.productBtn}>
                                 {/* <!-- Only for registered user and creator of the housing offer--> */}
                                 {isOwner ? <>
-                                    <a href="#" class={styles.edit}>Edit</a>
+                                    <Link to={`/edit/${id}`}  class={styles.edit}>Edit</Link>
                                     <p class={styles.remove} onClick={deletePostHandler}>Delete</p></> : <>
                                     {/* <!-- logged in user with available pieces--> */}
                                     <a href="#" class={styles.rentHome}>Rent a home, available {post.availablePieces} housing</a>
