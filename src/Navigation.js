@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './Components/Header/Header'
 import CreatePage from './Pages/CreatePage/CreatePage'
 import DetailsPage from './Pages/DetailsPage/DetailsPage'
+import EditPage from './Pages/EditPage/EditPage'
 import HomePage from './Pages/HomePage/HomePage'
 import HouseForRent from './Pages/HouseForRent/HouseForRent'
 import LoginPage from './Pages/LoginPage/Login'
@@ -20,6 +21,7 @@ function Navigation() {
                 <Route path="/create" element={<CreatePage />} />
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/house/:id" element={<DetailsPage />} />
+                <Route path="/edit/:id" element={<EditPage />} />
             </Routes>
         </BrowserRouter>
     )
