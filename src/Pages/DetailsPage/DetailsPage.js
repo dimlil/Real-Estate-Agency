@@ -43,7 +43,16 @@ function DetailsPage() {
 
                                 {/* <!-- if there are already tenants of the housing, separate their names with a comma and a space ", "  --> */}
                                 {/* <p>People rented this housing: Alex Petkov, Ivan Dobrev</p> */}
-                                <p>People rented this housing: {post?.rentedAHome.length === 0 ? <>There are no tenants yet.</> : <></>}</p>
+                                <p>People rented this housing: {post?.rentedAHome.length === 0 ? <>There are no tenants yet.</> :
+                                    <>
+                                        {post?.rentedAHome.length === 1 ? <>{post?.rentedAHome[0].name}</> :
+                                            <>
+                                                {post?.rentedAHome.map(user => {
+                                                    return user.name
+                                                }).join(', ')}
+                                            </>}
+                                    </>}
+                                </p>
 
                                 {/* <!-- If not display: --> */}
                                 {/* <p>People rented this housing: There are no tenants yet.</p> */}
@@ -55,7 +64,7 @@ function DetailsPage() {
                             <div class={styles.productBtn}>
                                 {/* <!-- Only for registered user and creator of the housing offer--> */}
                                 {isOwner ? <>
-                                    <Link to={`/edit/${id}`}  class={styles.edit}>Edit</Link>
+                                    <Link to={`/edit/${id}`} class={styles.edit}>Edit</Link>
                                     <p class={styles.remove} onClick={deletePostHandler}>Delete</p></> : <>
                                     {/* <!-- logged in user with available pieces--> */}
                                     <a href="#" class={styles.rentHome}>Rent a home, available {post.availablePieces} housing</a>
