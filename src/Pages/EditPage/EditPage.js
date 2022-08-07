@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { editPost } from '../../Services/EditPost';
 import { getPost } from '../../Services/GetPost';
 import styles from './Edit.module.css'
 function EditPage() {
@@ -59,10 +60,10 @@ function EditPage() {
 
     const formHanldler = async (e) => {
         e.preventDefault();
-        // const result = await create(name, type, year, city, imgUrl, propertyDesc, availablePieces);
-        // if (result.status===200) {
-        //     navigate('/')
-        // }
+        const result = await editPost(id, name, type, year, city, imgUrl, propertyDesc, availablePieces);
+        if (result.status===200) {
+            navigate(`/house/${id}`)
+        }
     }
     return (
         <section id="edit-page">
@@ -108,7 +109,7 @@ function EditPage() {
                     </div>
 
                     <div className={styles.createAction}>
-                        <button className={styles.createButton}>Edit</button>
+                        <button className={styles.createButton} onClick={formHanldler}>Edit</button>
                     </div>
                 </form>
             </div>
