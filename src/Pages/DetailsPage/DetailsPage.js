@@ -45,12 +45,9 @@ function DetailsPage() {
                                 {/* <p>People rented this housing: Alex Petkov, Ivan Dobrev</p> */}
                                 <p>People rented this housing: {post?.rentedAHome.length === 0 ? <>There are no tenants yet.</> :
                                     <>
-                                        {post?.rentedAHome.length === 1 ? <>{post?.rentedAHome[0].name}</> :
-                                            <>
-                                                {post?.rentedAHome.map(user => {
-                                                    return user.name
-                                                }).join(', ')}
-                                            </>}
+                                        {post?.rentedAHome.map(user => {
+                                            return user.name
+                                        }).join(', ')}
                                     </>}
                                 </p>
 
