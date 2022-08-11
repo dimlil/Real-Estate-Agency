@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { deletePost } from '../../Services/DeletePost';
 import { getPost } from '../../Services/GetPost';
+import { checkRenter } from '../../Services/GetRents';
 import styles from './Details.module.css'
 function DetailsPage() {
     const [post, setPost] = useState();
     const [isLoggedIn, setIsLoggedIn] = useState();
     const [isOwner, setIsOwner] = useState();
+    const [isRent, setIsRent] = useState();
 
     const { id } = useParams();
     const navigate = useNavigate();
@@ -17,6 +19,9 @@ function DetailsPage() {
             setIsLoggedIn(data.isLoggedIn);
             setIsOwner(data.isOwner);
         });
+        checkRenter(id).then(data => {
+            setIsRent(data);
+        })
     }, []);
 
     const deletePostHandler = async () => {
@@ -66,8 +71,12 @@ function DetailsPage() {
                                     <>
                                         {post.availablePieces !== 0 ? <>
                                             {/* <!-- logged in user with available pieces--> */}
-                                            <a href="#" class={styles.rentHome}>Rent a home, available {post.availablePieces} housing</a>
-                                            <p class={styles.alRentHome}>You have already rent this home</p>
+                                            {isRent ? <>
+                                                <p class={styles.alRentHome}>You have already rent this home</p> </>
+                                                :
+                                                <>
+                                                    <a href="#" class={styles.rentHome}>Rent a home, available {post.availablePieces} housing</a>
+                                                </>}
                                         </> : <>
                                             {/* <!-- logged in user with no available pieces--> */}
                                             <p class={styles.noHousing}>No Housing Available!</p>
