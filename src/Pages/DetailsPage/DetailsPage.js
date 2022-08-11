@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { deletePost } from '../../Services/DeletePost';
 import { getPost } from '../../Services/GetPost';
 import { checkRenter } from '../../Services/GetRents';
+import { rentAHouse } from '../../Services/RentHouse';
 import styles from './Details.module.css'
 function DetailsPage() {
     const [post, setPost] = useState();
@@ -29,6 +30,9 @@ function DetailsPage() {
         if (result) {
             navigate('/housing-for-rent');
         }
+    }
+    const RentHandler = async()=>{
+        rentAHouse(id);
     }
     return (
         <main>
@@ -75,7 +79,7 @@ function DetailsPage() {
                                                 <p class={styles.alRentHome}>You have already rent this home</p> </>
                                                 :
                                                 <>
-                                                    <a href="#" class={styles.rentHome}>Rent a home, available {post.availablePieces} housing</a>
+                                                    <p class={styles.rentHome} onClick={RentHandler} >Rent a home, available {post.availablePieces} housing</p>
                                                 </>}
                                         </> : <>
                                             {/* <!-- logged in user with no available pieces--> */}

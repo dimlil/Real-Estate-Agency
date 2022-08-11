@@ -132,6 +132,7 @@ span {
 }
 
 .rentHome {
+    cursor: pointer;
     background-color: rgba(86, 124, 194, 0.911);
 }
 
