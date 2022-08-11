@@ -62,14 +62,17 @@ function DetailsPage() {
                                 {/* <!-- Only for registered user and creator of the housing offer--> */}
                                 {isOwner ? <>
                                     <Link to={`/edit/${id}`} class={styles.edit}>Edit</Link>
-                                    <p class={styles.remove} onClick={deletePostHandler}>Delete</p></> : <>
-                                    {/* <!-- logged in user with available pieces--> */}
-                                    <a href="#" class={styles.rentHome}>Rent a home, available {post.availablePieces} housing</a>
-                                    <p class={styles.alRentHome}>You have already rent this home</p>
-
-                                    {/* <!-- logged in user with no available pieces--> */}
-                                    <p class={styles.noHousing}>No Housing Available!</p>
-                                </>}
+                                    <p class={styles.remove} onClick={deletePostHandler}>Delete</p></> :
+                                    <>
+                                        {post.availablePieces !== 0 ? <>
+                                            {/* <!-- logged in user with available pieces--> */}
+                                            <a href="#" class={styles.rentHome}>Rent a home, available {post.availablePieces} housing</a>
+                                            <p class={styles.alRentHome}>You have already rent this home</p>
+                                        </> : <>
+                                            {/* <!-- logged in user with no available pieces--> */}
+                                            <p class={styles.noHousing}>No Housing Available!</p>
+                                        </>}
+                                    </>}
                             </div>
                         </> : <></>}
 
