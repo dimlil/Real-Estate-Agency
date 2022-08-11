@@ -31,8 +31,11 @@ function DetailsPage() {
             navigate('/housing-for-rent');
         }
     }
-    const RentHandler = async()=>{
-        rentAHouse(id);
+    const RentHandler = async () => {
+        const result = await rentAHouse(id);
+        if (result === 200) {
+            setIsRent(true);
+        }
     }
     return (
         <main>
