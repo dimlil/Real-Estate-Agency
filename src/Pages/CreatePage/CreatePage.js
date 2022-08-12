@@ -11,6 +11,7 @@ function CreatePage() {
     const [imgUrl, setImgUrl] = useState('');
     const [propertyDesc, setPropertyDesc] = useState('');
     const [availablePieces, setAvailablePieces] = useState('');
+    const [errors, setErrors] = useState('');
 
     const updatingName = (e) => {
         setName(e.target.value);
@@ -42,13 +43,22 @@ function CreatePage() {
 
     const formHanldler = async (e) => {
         e.preventDefault();
+        setErrors();
         const result = await create(name, type, year, city, imgUrl, propertyDesc, availablePieces);
         if (result.status===200) {
             navigate('/')
         }
+        else{
+            setErrors(result.data);
+        }
     }
     return(
         <main>
+            {errors ? <div>
+                <div className="errorContainer">
+                    <p>{errors}</p>
+                </div>
+            </div> : <></>}
             <section id="create-page">
                 <div className={styles.createContainer}>
                     <div className={styles.boxImage}></div>
