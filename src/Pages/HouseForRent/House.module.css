@@ -3,10 +3,6 @@
     flex-wrap: wrap;
 }
 
-#allListings>.card {
-    margin-left: 6em;
-}
-
 #allListings>h1 {
     font-size: 53px;
     font-weight: 700;
