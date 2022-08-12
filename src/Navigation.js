@@ -6,6 +6,7 @@ import EditPage from './Pages/EditPage/EditPage'
 import HomePage from './Pages/HomePage/HomePage'
 import HouseForRent from './Pages/HouseForRent/HouseForRent'
 import LoginPage from './Pages/LoginPage/Login'
+import PageNotFound from './Pages/PageNotFound/PageNotFound'
 import RegisterPage from './Pages/RegisterPage/RegisterPage'
 import SearchPage from './Pages/SearchPage/SearchPage'
 function Navigation() {
@@ -22,6 +23,7 @@ function Navigation() {
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/house/:id" element={<DetailsPage />} />
                 <Route path="/edit/:id" element={<EditPage />} />
+                <Route path="/*" element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>
     )
