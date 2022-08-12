@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import house5 from '../../Assets/5.jpg'
 import TopHouse from '../../Components/TopHouse/TopHouse.js'
 import { getTopHouses } from '../../Services/GetTopHouses'
 import style from './Home.module.css'

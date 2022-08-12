@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import house5 from '../../Assets/5.jpg'
-import house2 from '../../Assets/house2.jpg'
 import AllHouse from '../../Components/AllHouses/AllHouses.js'
 import { getAllHouses } from '../../Services/GetAllHouses';
 import styles from './House.module.css'
