@@ -12,6 +12,7 @@ function EditPage() {
     const [imgUrl, setImgUrl] = useState('');
     const [propertyDesc, setPropertyDesc] = useState('');
     const [availablePieces, setAvailablePieces] = useState('');
+    const [errors, setErrors] = useState('');
 
     const { id } = useParams();
 
@@ -60,13 +61,22 @@ function EditPage() {
 
     const formHanldler = async (e) => {
         e.preventDefault();
+        setErrors();
         const result = await editPost(id, name, type, year, city, imgUrl, propertyDesc, availablePieces);
         if (result.status===200) {
             navigate(`/house/${id}`)
         }
+        else{
+            setErrors(result.data);
+        }
     }
     return (
         <section id="edit-page">
+            {errors ? <div>
+                <div className="errorContainer">
+                    <p>{errors}</p>
+                </div>
+            </div> : <></>}
             <div className={styles.editContainer}>
                 <div className={styles.boxImage}>
 
