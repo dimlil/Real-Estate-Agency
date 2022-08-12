@@ -1,5 +1,8 @@
 import axios from "axios"
 export const login = async(username, password) => {
+    if(username==='' || password===''){
+        return {data: "Username or Password must be filled"}
+    }
     try {
         const result = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
             username,
@@ -8,7 +11,8 @@ export const login = async(username, password) => {
         return result
     } catch (error) {
         if (error) {
-            return error.massege
+            console.log(error.response);
+            return error.response
         }
     }
 }

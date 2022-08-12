@@ -6,6 +6,7 @@ function LoginPage() {
     let navigate = useNavigate();
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState('');
 
     const updatingUserName = (e) => {
         setUserName(e.target.value);
@@ -14,15 +15,26 @@ function LoginPage() {
     const updatingPassword = (e) => {
         setPassword(e.target.value);
     };
+
     const formHanldler = async (e) => {
         e.preventDefault();
+        setErrors();
         const result = await login(username, password);
-        if (result.status===200) {
-            navigate('/')
+        // console.log(result);
+        if (result.status === 200) {
+            navigate('/');
+        } 
+        else{
+            setErrors(result.data);
         }
     }
     return (
         <main>
+            {errors ? <div>
+                <div className="errorContainer">
+                    <p>{errors}</p>
+                </div>
+            </div> : <></>}
             <section id="login-page">
                 <div className={styles.boxs}>
                     <div className={styles.cardImage}>
@@ -37,7 +49,7 @@ function LoginPage() {
                             <label className={styles.username}>Username</label>
                         </div>
                         <div className={styles.input}>
-                            <input type="password" className={styles.inputField} id="password" name="password" placeholder="******" onChange={updatingPassword}/>
+                            <input type="password" className={styles.inputField} id="password" name="password" placeholder="******" onChange={updatingPassword} />
                             <label className={styles.password}>Password</label>
                         </div>
                         <div className="action">
