@@ -9,6 +9,7 @@ function RegisterPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
+    const [errors, setErrors] = useState('');
 
     const updatingName = (e) => {
         setName(e.target.value);
@@ -28,14 +29,22 @@ function RegisterPage() {
 
     const formHanldler = async (e) => {
         e.preventDefault();
-        const result = await register(name, username, password);
-        if (result) {
-            navigate('/')
+        setErrors();
+        const result = await register(name, username, password, rePassword);
+        if (result.status === 200) {
+            navigate('/');
+        }
+        else{
+            setErrors(result.data);
         }
     }
     return (
         <main>
-
+            {errors ? <div>
+                <div className="errorContainer">
+                    <p>{errors}</p>
+                </div>
+            </div> : <></>}
             <section id="register-page">
                 <div className={styles.boxs}>
                     <div className={styles.cardImage}>
