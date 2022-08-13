@@ -23,7 +23,7 @@ function DetailsPage() {
         checkRenter(id).then(data => {
             setIsRent(data);
         })
-    }, []);
+    });
 
     const deletePostHandler = async () => {
         const result = await deletePost(id);
@@ -42,7 +42,7 @@ function DetailsPage() {
             <section id="deatils-page">
                 <div class={styles.wrapper}>
                     <div class={styles.productImg}>
-                        <img src={post?.imgUrl} />
+                        <img src={post?.imgUrl} alt="house" />
                     </div>
                     <div class={styles.productInfo}>
                         <div class={styles.productText}>

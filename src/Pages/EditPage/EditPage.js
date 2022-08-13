@@ -29,7 +29,7 @@ function EditPage() {
         return () => {
             // cleanup
         };
-    }, []);
+    });
 
     const updatingName = (e) => {
         setName(e.target.value);
