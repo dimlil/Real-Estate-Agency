@@ -20,7 +20,6 @@ function LoginPage() {
         e.preventDefault();
         setErrors();
         const result = await login(username, password);
-        // console.log(result);
         if (result.status === 200) {
             navigate('/');
         } 

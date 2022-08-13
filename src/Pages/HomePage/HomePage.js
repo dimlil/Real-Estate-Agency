@@ -9,8 +9,6 @@ function HomePage() {
         getTopHouses().then(data => { setPosts(data) });
     }, []);
 
-    console.log(posts);
-
     return (
         <main>
             <section id="home-page" className={style.backgroundImage}>
