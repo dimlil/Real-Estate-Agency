@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+<h1 align="center">Real Estate Agency</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was an exam task in [Software University Sofia](https://softuni.bg). The project is real estate agency. [Live demo](https://real-estate-agency-react.netlify.app).
+
+## What can you do?
+The visitors can view the Home page and Housing for rent catalog with available offers, they can also register with a name, username, and password, which will allow them to create their own offers for housing, rent a home(if the current user is not the owner of the housing offer and if there are vacant housing). Authors can edit or delete posts at any time.
+
+## How to set up
+- clone the repository 
+- run npm install.
+- create **.env file at root level**
+- add in .env: `REACT_APP_API_URL=https://...`
+- The project is using [this API](https://github.com/dimlil/Real-Estate-Agency-Server) you need to cloned or use live demo of it: https://real-estate-agency-server.herokuapp.com
+
 
 ## Available Scripts
 
