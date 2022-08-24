@@ -88,16 +88,6 @@ main {
     border-bottom-color: #6658d3;
 }
 
-
-/*
-.full-name,
-.email,
-.password,
-.re-password {
-    color: #6658d3;
-    transform: translateY(-1.5rem);
-}*/
-
 .createAction {
     margin-top: 1.9rem;
 }

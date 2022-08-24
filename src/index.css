@@ -1,16 +1,3 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 html {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
@@ -108,7 +95,7 @@ footer {
 footer a:hover {
   font-weight: normal;
   background-color: rgba(129, 115, 115, 0.466);
-} */
+} 
 
 footer {
   position: fixed;
