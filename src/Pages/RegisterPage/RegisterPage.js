@@ -31,7 +31,7 @@ function RegisterPage() {
         e.preventDefault();
         setErrors();
         const result = await register(name, username, password, rePassword);
-        if (result.status === 200) {
+        if (result === 'User Is Successfuly Register') {
             navigate('/');
         }
         else{
