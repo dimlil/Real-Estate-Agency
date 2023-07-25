@@ -36,7 +36,11 @@ nav a {
     text-transform: uppercase;
 }
 
-nav a:hover{
+nav a:hover {
     font-weight: normal;
     background-color: rgba(129, 115, 115, 0.466);
+}
+
+li:hover {
+    cursor: pointer;
 }
