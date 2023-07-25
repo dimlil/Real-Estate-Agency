@@ -141,3 +141,8 @@ footer {
       display: none;
   }
 }
+@media (max-width: 576px) {
+  section {
+      margin: 1rem 5vw;
+  }
+}

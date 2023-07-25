@@ -44,10 +44,10 @@ li:hover {
     cursor: pointer;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
     nav {
         font-size: 1.5rem;
-        padding: 18px 5rem 0 3rem;
+        padding: 18px 3rem;
     }
     nav a {
         padding: 0.5em;

@@ -79,7 +79,6 @@
     display: flex;
     top: 0%;
     left: 50%;
-    margin-left: 40px;
     text-align: center;
 }
 
@@ -94,7 +93,7 @@
 }
 
 .info>h1 {
-    font-size: 5.3rem;
+    font-size: 10vw;
     margin: 12px 0 0px;
     position: relative;
     font-weight: 700;
@@ -107,7 +106,7 @@
 }
 
 .info>h2 {
-    font-size: 1.5rem;
+    font-size: 7vw;
     font-weight: 700;
     text-transform: uppercase;
     padding: 0;
@@ -143,4 +142,17 @@
     text-align: right;
     width: 100%;
     z-index: 9999;
+}
+
+@media screen and (min-width: 576px) {
+    .info>h1 {
+        font-size: 5.3rem;
+    }
+    
+    .info>h2 {
+        font-size: 1.5rem;
+    }
+    .homeContainer {
+        margin-left: 40px;
+    }
 }
