@@ -2,13 +2,12 @@ nav {
     background: rgba(0, 17, 54, 0.85);
     width: 100%;
     display: flex;
-    font-size: 1.5rem;
+    font-size: 2vw;
     justify-content: space-around;
     align-items: center;
     margin-top: 0;
-    padding: 0rem 5rem 0 3rem;
+    padding: 1rem 0;
     margin: 0%;
-    padding-top: 18px;
 }
 
 a {
@@ -31,7 +30,7 @@ nav h1 {
 nav a {
     text-decoration: none;
     border-radius: 50%;
-    padding: 0.5em;
+    padding: 2vw;
     color: white;
     text-transform: uppercase;
 }
@@ -43,4 +42,14 @@ nav a:hover {
 
 li:hover {
     cursor: pointer;
+}
+
+@media screen and (min-width: 576px) {
+    nav {
+        font-size: 1.5rem;
+        padding: 18px 5rem 0 3rem;
+    }
+    nav a {
+        padding: 0.5em;
+    }
 }
